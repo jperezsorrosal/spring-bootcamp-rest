@@ -1,16 +1,18 @@
-package org.maleb0lge.restdemo;
+package org.maleb0lge.restdemo.error;
 
+import org.maleb0lge.restdemo.StudentErrorResponse;
+import org.maleb0lge.restdemo.StudentNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class StudentRestExceptionHandler {
+public class CustomerRestExeptionHandler {
 
     @ExceptionHandler
-    public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException e) {
-        StudentErrorResponse error = new StudentErrorResponse();
+    public ResponseEntity<CustomerErrorResponse> handleException(CustomerNotFoundException e) {
+        CustomerErrorResponse error = new CustomerErrorResponse();
 
         error.setStatus(HttpStatus.NOT_FOUND.value());
         error.setMessage(e.getMessage());
@@ -21,8 +23,8 @@ public class StudentRestExceptionHandler {
 
 
     @ExceptionHandler
-    public ResponseEntity<StudentErrorResponse> handleException(Exception e) {
-        StudentErrorResponse error = new StudentErrorResponse();
+    public ResponseEntity<CustomerErrorResponse> handleException(Exception e) {
+        CustomerErrorResponse error = new CustomerErrorResponse();
 
         error.setStatus(HttpStatus.BAD_REQUEST.value());
         error.setMessage(e.getMessage());

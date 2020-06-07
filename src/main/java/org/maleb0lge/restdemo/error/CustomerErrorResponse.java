@@ -1,14 +1,14 @@
-package org.maleb0lge.restdemo;
+package org.maleb0lge.restdemo.error;
 
-public class StudentResponseError {
+public class CustomerErrorResponse {
     private int status;
     private String message;
     private long timestamp;
 
-    public StudentResponseError() {
+    public CustomerErrorResponse() {
 
     }
-    public StudentResponseError(int status, String message, long timestamp) {
+    public CustomerErrorResponse(int status, String message, long timestamp) {
         this.status = status;
         this.message = message;
         this.timestamp = timestamp;
